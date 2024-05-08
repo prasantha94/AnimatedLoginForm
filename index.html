@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="login-form">
+      <div class="text">LOGIN</div>
+      <form>
+        <div class="field">
+          <div class="fas fa-envelope"></div>
+          <input type="text" placeholder="Email or Phone" />
+        </div>
+        <div class="field">
+          <div class="fas fa-lock"></div>
+          <input type="password" placeholder="Password" />
+        </div>
+        <button>LOGIN</button>
+        <div class="link">
+          Not a member?
+          <a href="#">Signup now</a>
+        </div>
+      </form>
+    </div>
+    <div class="container"></div>
+    <script>
+      let container = document.querySelector(".container");
+      let count = 800;
+      for (let i = 0; i < count; i++) {
+        let box = document.createElement("div");
+        box.className = "box";
+        container.appendChild(box);
+      }
+      let box = document.querySelectorAll(".box");
+      for (let i = 0; box.length; i++) {
+        let duration = Math.random() * 3;
+        let changeColor = Math.random() * 360;
+        box[i].addEventListener("mouseover", (e) => {
+          box[i].classList.add("active");
+          box[i].style.animationDuration = 1 + duration + "s";
+          box[i].style.filter = "hue-rotate(" + changeColor + "deg)";
+        });
+      }
+    </script>
+  </body>
+</html>
